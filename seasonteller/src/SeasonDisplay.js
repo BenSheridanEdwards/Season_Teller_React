@@ -2,7 +2,7 @@ import React from 'react';
 
 const seasonConfig = {
   summer: {
-    text: "Let's hit the beach!"
+    text: "Let's hit the beach!",
     iconName: 'sun'
   },
   winter: {
@@ -25,9 +25,9 @@ const SeasonDisplay = (props) => {
 
   return (
     <div>
-      <i className={`${iconName} icon`} />
+      <i className={`massive ${iconName} icon`} />
       <h1>{text}</h1>
-      <i className={`${iconName} icon`} />
+      <i className={`massive ${iconName} icon`} />
     </div>
   );
 };
