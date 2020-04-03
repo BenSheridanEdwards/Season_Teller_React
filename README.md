@@ -1,96 +1,83 @@
-# Season Teller in React
+# Season Teller
 
-### Description
+[Description]() | [User Stories]() |[Mockups]() | [Application Showcase]() | [Installation Instructions]()
+
+## Description
 
 A simple season teller app made with React. It uses chromes geolocation API to determine users latitude and deduces from that whether they're on the northern or southern hemisphere. 
 
 Based on the user's hemisphere and the date, the app will display a page indicating if it's summer or winter.
 
-### Mockups
+## User Stories
 
-![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonalTeller-Mockup.png)
+```
+As a user, when I use Season Teller.
+I expect to see a loading page, asking for my location before I'm shown content.
+```
+```
+As a user, wehn I use Season Teller, and have given permission to use my location.
+When I'm in the northern hemisphere between March and October, 
+I expect to be shown content that indicates it's summer.
+```
+```
+As a user, when I use Season Teller, and have given permission to use my location.
+When I'm in the northern hemisphere between November and February, 
+I expect to be shown content that indicates it's winter.
+```
+```
+As a user, when I use Season Teller, and have given permission to use my location.
+When I'm in the southern hemisphere between March and October, 
+I expect to be shown content that indicates it's winter.
+```
+```
+As a user, when I use Season Teller, and have given permission to use my location.
+When I'm in the southern hemisphere between November and February, 
+I expect to be shown content that indicates it's summer.
+```
 
-### React App
+## Mockups
 
-When the user is in a location where it's summer:
+![Season Teller Summer and Winter Mockups](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonalTeller-Mockup.png)
 
-![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-SummerPage.png)
+## Application Showcase
 
-When the user is in a location where it's winter:
-
-![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-WinterPage.png)
-
-There's also a loading page that displays a spinner and a prompt whilst the user decides if they want to share their location:
+When a user first uses Season Teller, they are shown a loading page that displays a spinner and a prompt asking for the user to share their location:
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-LoadingPage.png)
 
----
+When the user has shared their location, and is in a location where it's summer:
+
+![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-SummerPage.png)
+
+When the user has shared their location, and is in a location where it's winter:
+
+![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-WinterPage.png)
+
+## Installation Instructions
+
+Clone this repository from github then change directory into it.
+
+```
+$ git clone git@github.com:BenSheridanEdwards/Season_Teller_React.git
+$ cd Season_Teller_React
+```
+
+Then change directory into the React project.
+
+cd season-teller
+
+From inside the React project, you can run npm start in the terminal to launch the app:
+
+```
+$ npm start
+```
+
+Launching the app from the command line should open up a new tab in your default browser. If it doesn't, you can navigate to [http://localhost:3000](http://localhost:3000) to view the application.<br />
+
+### Additional Info
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
