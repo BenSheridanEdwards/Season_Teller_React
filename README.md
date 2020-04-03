@@ -2,9 +2,7 @@
 
 [Description](#description) | [User Stories](#user-stories) | [Mockups](#mockups) | [Application Showcase](#app-showcase) | [Installation Instructions](#installation)
 
-<a name="description"><br /></a>
-
-## Description
+## <a name="description">Description</a>
 
 A simple season teller app made with React. It uses chromes geolocation API to determine users latitude and deduces from that whether they're on the northern or southern hemisphere. 
 
@@ -53,11 +51,11 @@ When a user first uses Season Teller, they are shown a loading page that display
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-LoadingPage.png)
 
-When the user has shared their location, and is in a location where it's summer:
+When a user is in a location where it's the season of summer, they're shown:
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-SummerPage.png)
 
-When the user has shared their location, and is in a location where it's winter:
+When a user is in a location where it's the season of winter, they're shown:
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-WinterPage.png)
 
