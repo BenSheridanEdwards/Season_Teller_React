@@ -68,7 +68,7 @@ $ cd Season_Teller_React
 
 Then change directory into the React project.
 
-cd season-teller
+cd seasonteller
 
 From inside the React project, you can run npm start in the terminal to launch the app:
 
