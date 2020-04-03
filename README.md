@@ -8,6 +8,8 @@ A simple season teller app made with React. It uses chromes geolocation API to d
 
 Based on the user's hemisphere and the date, the app will display a page indicating if it's summer or winter.
 
+*Tech Stack: JavaScript, React, Node, Webpack, Babel, CSS, HTML*
+
 ## <a name="user-stories">User Stories</a>
 
 ```
