@@ -12,7 +12,7 @@ Based on the user's hemisphere and present calendar month, the app will display 
 
 *Tech Stack: JavaScript, React, Node, CSS, HTML, Webpack, Babel, CircleCI, Firebase*
 
-You'll find the app [here](https://season-teller-react.web.app/), cmd/window + click to open in a new tab.
+You'll find the app [here](https://season-teller-react.web.app/), use cmd/window + click to open in a new tab.
 
 ## <a name="user-stories">User Stories</a>
 
