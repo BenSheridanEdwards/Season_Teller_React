@@ -10,7 +10,7 @@ Based on the user's hemisphere and the date, the app will display a page indicat
 
 *Tech Stack: JavaScript, React, Node, CSS, HTML, Webpack, Babel, CircleCI, Codeclimate, Firebase*
 
-You can checkout the app [here](https://season-teller-react.web.app/).
+You'll find the app [here](https://season-teller-react.web.app/).
 
 ## <a name="user-stories">User Stories</a>
 
