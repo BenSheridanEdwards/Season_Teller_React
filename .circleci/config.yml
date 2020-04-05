@@ -21,9 +21,8 @@ jobs:
                   paths:
                       - ./node_modules
             - run:
-                  name: Build
-                  command: npm build
-            - run:
-                name: 'Deploy to Firebase Hosting'
-                command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
-                
+                  name: Build Project
+                  command: npm run-script build
+            - run:           
+                  name: 'Deploy to Firebase Hosting'
+                  command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
