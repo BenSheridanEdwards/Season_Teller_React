@@ -1,5 +1,5 @@
 orbs:
-  react: thefrontside/react@0.2.0
+  react: thefrontside/react@0.2.0,
   firebase-deploy: noyo/firebase-deploy@0.1.1
 
 version: 2.1
@@ -26,5 +26,5 @@ jobs:
                   name: Build
                   command: npm build
             - run:
-          name: Firebase Deploy
-          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+                   name: Firebase Deploy
+                   command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
