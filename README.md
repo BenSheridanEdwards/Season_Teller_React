@@ -6,11 +6,11 @@
 
 ## <a name="description">Description</a>
 
-A simple season teller app made with React. It uses chromes geolocation API to determine users latitude and deduces from that whether they're on the northern or southern hemisphere. 
+A simple season teller app made with React. It uses chromes geolocation API to determine the users latitude and deduces from that whether they're on the northern or southern hemisphere. 
 
-Based on the user's hemisphere and the date, the app will display a page indicating if it's summer or winter.
+Based on the user's hemisphere and present calendar month, the app will display one of two possible pages, indicating their location's season is summer or winter.
 
-*Tech Stack: JavaScript, React, Node, CSS, HTML, Webpack, Babel, CircleCI, Codeclimate, Firebase*
+*Tech Stack: JavaScript, React, Node, CSS, HTML, Webpack, Babel, CircleCI, Firebase*
 
 You'll find the app [here](https://season-teller-react.web.app/).
 
