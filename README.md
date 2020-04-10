@@ -49,18 +49,15 @@ I expect to be shown content that indicates it's summer.
 
 ## Application Showcase
 
-When a user first uses Season Teller, they are shown a loading page that displays a spinner and a prompt asking for the user to share their location:
+![Application Screenrecording](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-AppShowcase.gif)
 
-![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-LoadingPage.png)
-
-When a user is in a location where it's the season of summer, they're shown:
+When a user is in a location where it's summer, they're shown:
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-SummerPage.png)
 
-When a user is in a location where it's the season of winter, they're shown:
+When a user is in a location where it's winter, they're shown:
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-WinterPage.png)
-
 
 
 ## <a name="installation">Installation Instructions</a>
