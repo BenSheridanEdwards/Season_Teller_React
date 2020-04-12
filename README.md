@@ -21,7 +21,7 @@ As a user, when I use Season Teller.
 I expect to see a loading page, asking for my location before I'm shown content.
 ```
 ```
-As a user, wehn I use Season Teller, and have given permission to use my location.
+As a user, when I use Season Teller, and have given permission to use my location.
 When I'm in the northern hemisphere between March and October, 
 I expect to be shown content that indicates it's summer.
 ```
