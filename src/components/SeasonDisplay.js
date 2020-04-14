@@ -7,7 +7,7 @@ const seasonConfig = {
     iconName: 'sun'
   },
   winter: {
-    text: 'Burr it is cold!',
+    text: "Burr it's cold!",
     iconName: 'snowflake'
   }
 };
@@ -21,13 +21,13 @@ const getSeason = (lat, month) => {
 }
 
 const SeasonDisplay = (props) => {
-  const season = getSeason(props.lat, new Date().getMonth());
+  const season = getSeason(props.lat, props.date);
   const { text, iconName } = seasonConfig[season] 
 
   return (
-    <div className={`season-display ${season}`}>
+    <div className={`season-display ${season}`} data-test="component-season-display">
       <i className={`icon-left massive ${iconName} icon`} />
-      <h1>{text}</h1>
+      <h1 data-test="season-message">{text}</h1>
       <i className={`icon-right massive ${iconName} icon`} />
     </div>
   );
