@@ -57,8 +57,12 @@
       "!**/serviceWorker.js",
       "!**/index.js"
     ],
-    "coverageReporters": [
+    "reporter": [
+      "clover",
+      "html",
       "text"
+      "text",
+      "lcov"
     ]
   }
 }
