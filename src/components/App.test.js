@@ -18,8 +18,20 @@ const setup = (props={}, state=null) => {
     return wrapper;
 }
 
-test('renders without error', () =>{
+it('renders without error', () =>{
   const wrapper = setup();
   const appComponent = findByTestAttr(wrapper, 'component-app');
+  expect(appComponent.length).toBe(1);
+});
+
+it("renders an error message when the user doesn't share their location", () =>{
+  const wrapper = setup({}, {lat: "", errorMessage: 'Denied Location'});
+  const errorMessage = findByTestAttr(wrapper, 'error-message');
+  expect(errorMessage.text()).toContain("Error: Denied Location");
+});
+
+it("renders the Season Display component when the user shares their location", () =>{
+  const wrapper = setup({}, {lat: "10000", errorMessage: ""});
+  const appComponent = findByTestAttr(wrapper, 'component-season-display');
   expect(appComponent.length).toBe(1);
 });
