@@ -31,14 +31,23 @@ jobs:
                   command: |
                     curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
                     chmod +x ./cc-test-reporter
-            - run:
+            - run: 
                   name: Run Tests with Coverage
                   command: |
-                    ./cc-test-reporter before-build
-                    npm run coverage
-                    ./cc-test-reporter after-build --exit-code $?
-                  environment:
-                  JEST_JUNIT_OUTPUT: "coverage/junit/js-test-results.xml"
+                    npm test
+                    ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/codeclimate.frontend.json coverage/frontend/lcov.info
             - run:           
                   name: Deploy to Firebase Hosting
                   command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+
+  upload-coverage:
+      environment: 
+            - CC_TEST_REPORTER_ID: $CC_TEST_REPORTER_ID
+      steps:
+            - attach_workspace:
+            at: ~/repo/tmp
+            - run:
+            name: Upload coverage results to Code Climate
+            command: |
+                  ./tmp/cc-test-reporter sum-coverage tmp/codeclimate.*.json -p 2 -o tmp/codeclimate.total.json
+                  ./tmp/cc-test-reporter upload-coverage -i tmp/codeclimate.total.jsonupload-coverage:
