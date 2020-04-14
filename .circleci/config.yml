@@ -26,6 +26,9 @@ jobs:
             - run: 
                   name: Run Tests
                   command: npm run-script test
+            - run:
+                  name: "Run Jest and Collect Coverage Reports"
+                  command: jest --collectCoverage=true
             - run:           
                   name: 'Deploy to Firebase Hosting'
                   command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
