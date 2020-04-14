@@ -1,5 +1,6 @@
 orbs:
   react: thefrontside/react@0.2.0
+  code-climate-quality: freighthub/code-climate-quality@0.0.4
 version: 2.1
 jobs:
     build:
@@ -24,21 +25,49 @@ jobs:
                   name: Build Project
                   command: npm run-script build
             - run:
-                  name: Run Tests
-                  command: npm run-script test 
-            - run:
-                  name: Setup Code Climate Test Reporter
-                  command: |
-                    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-                    chmod +x ./cc-test-reporter
-            - run:
-                  name: Run Tests with Coverage
-                  command: |
-                    ./cc-test-reporter before-build
-                    npm run test -- --coverage
-                    ./cc-test-reporter after-build --exit-code $?
-                  environment: $CC_TEST_REPORTER_ID
-                  JEST_JUNIT_OUTPUT: "coverage/junit/js-test-results.xml"
+                  name: Run Tests with coverage 
+                  command: npm run-script test -- --coverage
             - run:           
                   name: Deploy to Firebase Hosting
                   command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+                  description: Run tests with coverage and upload results to code climate
+
+parameters:
+  setupFile:
+    type: string
+    default: .env.test
+  coverageCommand:
+    type: string
+    default: yarn coverage
+  jestJunitOutputFolder:
+    type: string
+    default: coverage/junit
+  jestJunitOutputFile:
+    type: string
+    default: junit.xml
+steps:
+  - run:
+      name: Copy test env file
+      command: cp << parameters.setupFile >> .env
+  - run:
+      name: Setup Code Climate test-reporter
+      command: |
+        # download test reporter as a static binary
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-0.7.0-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+  - run:
+      name: Generate code coverage
+      environment:
+        JEST_JUNIT_OUTPUT: >-
+          << parameters.jestJunitOutputFolder >>/<<
+          parameters.jestJunitOutputFile >>
+      command: |
+        # notify Code Climate of a pending test report using `before-builds`
+        ./cc-test-reporter before-build
+        << parameters.coverageCommand >>
+        # upload test report to Code Climate using `after-builds`
+        ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
+  - store_test_results:
+      path: << parameters.jestJunitOutputFolder >>
+  - store_artifacts:
+      path: << parameters.jestJunitOutputFolder >>
