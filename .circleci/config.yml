@@ -29,6 +29,15 @@ jobs:
               curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
               chmod +x ./cc-test-reporter
       - run:
+            name: Run Tests and Code Coverage
+            command: |
+              ./cc-test-reporter before-build
+              npm run test:coverage
+              pwd
+              ls
+              ../cc-test-reporter after-build --debug -t clover --exit-code $?
+
+      - run:
             name: Build Project
             command: npm run-script build
       - run:
@@ -38,9 +47,4 @@ jobs:
             name: Deploy to Firebase Hosting
             command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
             description: Run tests with coverage and upload results to code climate
-      - run:
-            name: Run Tests and Code Coverage
-            command: |
-              ./cc-test-reporter before-build
-              npm run test:coverage
-              ../cc-test-reporter after-build --debug -t clover --exit-code $?
+      
