@@ -4,8 +4,6 @@ orbs:
 version: 2.1
 jobs:
   build:
-#     environment:
-#       CC_TEST_REPORTER_ID: $CC_TEST_REPORTER_ID
     docker:
       - image: circleci/node:10.16.0
     working_directory: ~/repo
