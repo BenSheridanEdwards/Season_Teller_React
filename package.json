@@ -18,6 +18,7 @@
     "test:watch": "react-scripts test",
     "test:coverage": "set CI=true && react-scripts test --coverage",
     "coverage": "react-scripts test --env=jsdom --coverage --testResultsProcessor ./node_modules/jest-junit",
+    "cover": "npm --reporter=lcov --reporter=text jest",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js src/**/*.jsx"
   },

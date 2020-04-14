@@ -1,73 +1,28 @@
-orbs:
-  react: thefrontside/react@0.2.0
-  code-climate-quality: freighthub/code-climate-quality@0.0.4
-version: 2.1
+version: 2.0
 jobs:
-    build:
-        docker:
-            - image: circleci/node:10.16.0
-        working_directory: ~/repo
-        steps:
-            - checkout
-            # Download and cache dependencies
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      - v1-dependencies-
-            - run:
-                  name: Install Dependencies
-                  command: npm install
-            - save_cache:
-                  key: v1-npm-deps-{{ checksum "package-lock.json" }}
-                  paths:
-                      - ./node_modules
-            - run:
-                  name: Build Project
-                  command: npm run-script build
-            - run:
-                  name: Run Tests with coverage 
-                  command: npm run-script test -- --coverage
-            - run:           
-                  name: Deploy to Firebase Hosting
-                  command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
-                  description: Run tests with coverage and upload results to code climate
-
-parameters:
-  setupFile:
-    type: string
-    default: .env.test
-  coverageCommand:
-    type: string
-    default: yarn coverage
-  jestJunitOutputFolder:
-    type: string
-    default: coverage/junit
-  jestJunitOutputFile:
-    type: string
-    default: junit.xml
-steps:
-  - run:
-      name: Copy test env file
-      command: cp << parameters.setupFile >> .env
-  - run:
-      name: Setup Code Climate test-reporter
-      command: |
-        # download test reporter as a static binary
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-0.7.0-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-  - run:
-      name: Generate code coverage
-      environment:
-        JEST_JUNIT_OUTPUT: >-
-          << parameters.jestJunitOutputFolder >>/<<
-          parameters.jestJunitOutputFile >>
-      command: |
-        # notify Code Climate of a pending test report using `before-builds`
-        ./cc-test-reporter before-build
-        << parameters.coverageCommand >>
-        # upload test report to Code Climate using `after-builds`
-        ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
-  - store_test_results:
-      path: << parameters.jestJunitOutputFolder >>
-  - store_artifacts:
-      path: << parameters.jestJunitOutputFolder >>
+  build:
+    environment:
+      CC_TEST_REPORTER_ID: $CC_TEST_REPORTER_ID
+    docker:
+      - image: "mileschou/xdebug:7.3"
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Setup dependencies
+          command: |
+            sudo composer self-update
+            composer install -n --prefer-dist
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+          # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            sudo docker-php-ext-enable xdebug
+            ./cc-test-reporter before-build
+            sudo vendor/bin/phpunit --coverage-clover clover.xml
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code 
