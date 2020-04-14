@@ -56,12 +56,6 @@
       "!**/coverage/**",
       "!**/serviceWorker.js",
       "!**/index.js"
-    ],
-    "reporter": [
-      "clover",
-      "html",
-      "text",
-      "lcov"
     ]
   }
 }
