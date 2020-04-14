@@ -44,5 +44,5 @@ jobs:
             command: |
               sudo docker-php-ext-enable xdebug
               ./cc-test-reporter before-build
-              sudo vendor/bin/phpunit --coverage-clover clover.xml
+              npm run-script test -- --coverage
               ./cc-test-reporter after-build --coverage-input-type clover --exit-code 
