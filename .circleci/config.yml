@@ -37,7 +37,7 @@ jobs:
                     ./cc-test-reporter before-build
                     npm run test -- --coverage
                     ./cc-test-reporter after-build --exit-code $?
-            environment:
+                  environment: $CC_TEST_REPORTER_ID
                   JEST_JUNIT_OUTPUT: "coverage/junit/js-test-results.xml"
             - run:           
                   name: Deploy to Firebase Hosting
