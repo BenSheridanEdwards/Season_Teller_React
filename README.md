@@ -1,9 +1,7 @@
 # Season Teller
 
-[![CircleCI](https://circleci.com/gh/BenSheridanEdwards/Season_Teller_React.svg?style=svg)](https://circleci.com/gh/BenSheridanEdwards/Season_Teller_React)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/maintainability)
-
+[![CircleCI](https://circleci.com/gh/BenSheridanEdwards/Season_Teller_React.svg?style=svg)](https://circleci.com/gh/BenSheridanEdwards/Season_Teller_React) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/maintainability) 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/test_coverage)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/test_coverage)
 
 [Description](#description) | [User Stories](#user-stories) | [Mockups](#mockups) | [Application Showcase](#app-showcase) | [Installation Instructions](#installation)
