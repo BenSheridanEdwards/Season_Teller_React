@@ -27,7 +27,7 @@ jobs:
                   name: Run Tests and Collect Coverage Reports
                   command: npm run-script test --coverage
             - store_artifacts:
-                  path: coverage
+                  path: /Users/bensheridanedwards/Documents/2020/Coding/Udemy-LearningReact/ReactProjects/Season_Teller_React/coverage
             - run:           
                   name: Deploy to Firebase Hosting
                   command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
