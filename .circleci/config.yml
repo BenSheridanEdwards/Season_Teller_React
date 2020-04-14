@@ -40,7 +40,7 @@ jobs:
                   name: Deploy to Firebase Hosting
                   command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
 
-  upload-coverage:
+      upload-coverage:
       environment: 
             - CC_TEST_REPORTER_ID: $CC_TEST_REPORTER_ID
       steps:
