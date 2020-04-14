@@ -40,9 +40,7 @@ jobs:
               curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
               chmod +x ./cc-test-reporter
       - run:
-            name: Run tests
-            command: |
-              sudo docker-php-ext-enable xdebug
-              ./cc-test-reporter before-build
-              npm run-script test -- --coverage
-              ./cc-test-reporter after-build --coverage-input-type clover --exit-code 
+          name: Upload coverage results to Code Climate
+          command: |
+            ./tmp/cc-test-reporter sum-coverage tmp/codeclimate.*.json -p 2 -o tmp/codeclimate.total.json
+            ./tmp/cc-test-reporter upload-coverage -i tmp/codeclimate.total.json
