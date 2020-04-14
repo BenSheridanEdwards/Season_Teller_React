@@ -44,4 +44,5 @@ jobs:
             command: |
               ./cc-test-reporter before-build
               npm run test:coverage
-              ./cc-test-reporter --debug -t clover --exit-code $?
+              cd coverage
+              ../cc-test-reporter after-build --debug -t clover --exit-code $?
