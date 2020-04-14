@@ -24,10 +24,21 @@ jobs:
                   name: Build Project
                   command: npm run-script build
             - run:
-                  name: Run Tests and Collect Coverage Reports
-                  command: npm run-script test -- --coverage
-            - store_artifacts:
-                  path: ./coverage
+                  name: Run Tests
+                  command: npm run-script test 
+            - run:
+                  name: Setup Code Climate Test Reporter
+                  command: |
+                    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+                    chmod +x ./cc-test-reporter
+            - run:
+                  name: Run Tests with Coverage
+                  command: |
+                    ./cc-test-reporter before-build
+                    npm run coverage
+                    ./cc-test-reporter after-build --exit-code $?
+                  environment:
+                  JEST_JUNIT_OUTPUT: "coverage/junit/js-test-results.xml"
             - run:           
                   name: Deploy to Firebase Hosting
                   command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
