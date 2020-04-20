@@ -71,7 +71,7 @@ $ git clone git@github.com:BenSheridanEdwards/Season_Teller_React.git
 $ cd Season_Teller_React
 ```
 
-### Launching the application
+### Launching the Application
 
 From inside the React project, you can run `npm start` in the terminal to launch the app in the browser.
 
@@ -81,7 +81,7 @@ $ npm start
 
 Launching the app from the command line should open up a new tab in your default browser. If it doesn't, you can navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-### Running tests
+### Running Tests
 
 From inside the React project, you can run `npm start` in the terminal to run the test suite. 
 
@@ -89,7 +89,7 @@ From inside the React project, you can run `npm start` in the terminal to run th
 $ npm test
 ```
 
-### Seeing test coverage
+### Seeing Test Coverage
 
 From inside the React project, you can run 'npm test -- --coverage' in the terminal to see the code coverage for this project.
 
