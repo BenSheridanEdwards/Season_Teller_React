@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/maintainability) 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/test_coverage)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/test_coverage)
 
-[Description](#description) | [User Stories](#user-stories) | [Mockups](#mockups) | [Application Showcase](#app-showcase) | [Installation Instructions](#installation)
+[Description](#description) | [User Stories](#user-stories) | [Mockups](#mockups) | [Application Showcase](#app-showcase) | [Installation Instructions](#installation) | [Credits](#credits)
 
 ## <a name="description">Description</a>
 
@@ -97,7 +97,7 @@ From inside the React project, you can run 'npm test -- --coverage' in the termi
 $ npm test -- --coverage
 ```
 
-### Credits
+## <a name="credits">Credits</a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
