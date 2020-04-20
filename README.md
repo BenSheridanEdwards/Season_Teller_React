@@ -71,18 +71,38 @@ $ git clone git@github.com:BenSheridanEdwards/Season_Teller_React.git
 $ cd Season_Teller_React
 ```
 
+### Launching the application
+
 From inside the React project, you can run `npm start` in the terminal to launch the app in the browser.
 
 ```
 $ npm start
 ```
 
-Launching the app from the command line should open up a new tab in your default browser. If it doesn't, you can navigate to [http://localhost:3000](http://localhost:3000) to view the application.<br />
+Launching the app from the command line should open up a new tab in your default browser. If it doesn't, you can navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-### Additional Info
+### Running tests
+
+From inside the React project, you can run `npm start` in the terminal to run the test suite. 
+
+```
+$ npm test
+```
+
+### Seeing test coverage
+
+From inside the React project, you can run 'npm test -- --coverage' in the terminal to see the code coverage for this project.
+
+```
+$ npm test -- --coverage
+```
+
+### Credits
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was tested with [Jest](https://jestjs.io/) & [Enzyme](https://enzymejs.github.io/enzyme/). 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project uses continuous integration and deployment with [CircleCI](https://circleci.com/) & [Firebase](https://firebase.google.com/).
+
+This project utilises [Code Climate](https://codeclimate.com/) to ensure high code quality.
