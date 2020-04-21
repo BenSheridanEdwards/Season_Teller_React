@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/maintainability) 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ab6fc16585a960fdfadb/test_coverage)](https://codeclimate.com/github/BenSheridanEdwards/Season_Teller_React/test_coverage)
 
-[Description](#description) | [User Stories](#user-stories) | [Mockups](#mockups) | [Application Showcase](#app-showcase) | [Installation Instructions](#installation) | [Credits](#credits)
+[Description](#description) | [User Stories](#user-stories) | [Mockups](#mockups) | [App Showcase](#app-showcase) | [Features](#features) | [Improvements](#improvements) | [Installation Instructions](#installation) | [Credits](#credits)
 
 ## <a name="description">Description</a>
 
@@ -47,11 +47,11 @@ I expect to be shown content that indicates it's summer.
 
 ![Season Teller Summer and Winter Mockups](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonalTeller-Mockup.png)
 
-<a name="app-showcase"><br /></a>
+## <a name="app-showcase">App Showcase</a>
 
-## Application Showcase
+![App Screenrecording](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-AppShowcase.gif)
 
-![Application Screenrecording](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-AppShowcase.gif)
+### <a name="features">Features</a>
 
 When a user is in a location where it's summer, they're shown:
 
@@ -61,6 +61,11 @@ When a user is in a location where it's winter, they're shown:
 
 ![](https://github.com/BenSheridanEdwards/Season_Teller_React/blob/master/media/SeasonTeller-WinterPage.png)
 
+### <a name="improvements">Improvements</a>
+
+- 100% Test Coverage
+  - Learn how to test with snapshots
+- Rebuild the app from scratch using TDD
 
 ## <a name="installation">Installation Instructions</a>
 
@@ -71,7 +76,7 @@ $ git clone git@github.com:BenSheridanEdwards/Season_Teller_React.git
 $ cd Season_Teller_React
 ```
 
-### Launching the Application
+### Launching the App from the Command Line
 
 From inside the React project, you can run `npm start` in the terminal to launch the app in the browser.
 
