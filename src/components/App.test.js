@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow, ShallowWrapper } from 'enzyme';
+import Enzyme, { shallow, ShallowWrapper, mount } from 'enzyme';
 import { findByTestAttr } from '../test/testUtils';
 
 import App from './App';
@@ -36,8 +36,16 @@ it("renders the Season Display component when the user shares their location", (
   expect(appComponent.length).toBe(1);
 });
 
-it('calls componentDidMount and set the state', () => {
-  jest.spyOn(App.prototype, 'componentDidMount')
-  const wrapper = shallow(<App />)
-  expect(App.prototype.componentDidMount.mock.calls.length).toBe(1)
+describe('when the component mounts', () =>{
+
+  it('calls componentDidMount', () => {
+    jest.spyOn(App.prototype, 'componentDidMount')
+    const wrapper = shallow(<App />)
+    expect(App.prototype.componentDidMount.mock.calls.length).toBe(1)
+  })
+
+  it('sets the latitude to the state', async () => {
+    const wrapper = await mount(<App />)
+    expect(wrapper.state()).toEqual({"date": 3, "errorMessage": "", "lat": 50})
+  })
 })

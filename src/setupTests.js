@@ -4,9 +4,13 @@ import EnzymeAdapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 
 const mockGeolocation = {
-  getCurrentPosition: jest.fn(),
-  watchPosition: jest.fn()
+  getCurrentPosition: jest.fn()
+    .mockImplementation((success) => Promise.resolve(success({
+      message: "This is my error message",
+      coords: {
+        latitude: 50
+      }
+    })))
 };
 
-global.navigator.geolocation = mockGeolocation;
-
+window.navigator.geolocation = mockGeolocation;
