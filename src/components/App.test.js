@@ -35,3 +35,9 @@ it("renders the Season Display component when the user shares their location", (
   const appComponent = findByTestAttr(wrapper, 'component-season-display');
   expect(appComponent.length).toBe(1);
 });
+
+it('calls componentDidMount and set the state', () => {
+  jest.spyOn(App.prototype, 'componentDidMount')
+  const wrapper = shallow(<App />)
+  expect(App.prototype.componentDidMount.mock.calls.length).toBe(1)
+})
