@@ -46,6 +46,6 @@ describe('when the component mounts', () =>{
 
   it('sets the latitude to the state', async () => {
     const wrapper = await mount(<App />)
-    expect(wrapper.state()).toEqual({"date": 3, "errorMessage": "", "lat": 50})
+    expect(wrapper.state("lat")).toEqual(50)
   })
 })
